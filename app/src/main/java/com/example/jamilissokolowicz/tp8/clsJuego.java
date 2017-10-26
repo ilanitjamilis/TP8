@@ -1,7 +1,11 @@
 package com.example.jamilissokolowicz.tp8;
 
+import android.support.annotation.FloatRange;
+import android.util.Log;
 import android.widget.Button;
 
+import org.cocos2d.actions.interval.MoveBy;
+import org.cocos2d.actions.interval.MoveTo;
 import org.cocos2d.actions.interval.ScaleBy;
 import org.cocos2d.layers.Layer;
 import org.cocos2d.menus.Menu;
@@ -12,6 +16,8 @@ import org.cocos2d.nodes.Sprite;
 import org.cocos2d.opengl.CCGLSurfaceView;
 import org.cocos2d.types.CCSize;
 
+import java.util.Random;
+
 public class clsJuego {
 
     CCGLSurfaceView _VistaDelJuego;
@@ -21,6 +27,7 @@ public class clsJuego {
     Sprite nube;
     Sprite gota;
     MenuItemImage botonComenzarJuego;
+
 
     public clsJuego(CCGLSurfaceView VistaDelJuego){
         _VistaDelJuego = VistaDelJuego;
@@ -69,8 +76,38 @@ public class clsJuego {
         public CapaFondoNubesLluvia() {
             PonerTodo();
         }
-        private void PonerTodo(){
+        public void PonerTodo(){
+            Log.d("PonerTodo", "antes de llamar a lluvia por primera vez");
+            Lluvia(3f);
+            Log.d("PonerTodo", "antes del schudle");
+            Random rand = new Random();
+            int tiempoSchudle = rand.nextInt(1);
 
+            super.schedule("Lluvia", tiempoSchudle+0.25f);
+
+            nube = Sprite.sprite("nube.png");
+            nube.setPosition(PantallaDelDispositivo.getWidth()/2, (PantallaDelDispositivo.getHeight()-(PantallaDelDispositivo.getHeight()/4)));
+            super.addChild(nube);
+        }
+        public void Lluvia(float deltaTiempo){
+            Random random = new Random();
+            int tiempoEntreGotas = random.nextInt(2);
+            tiempoEntreGotas+=1;
+
+            random = new Random();
+            int posX = random.nextInt(180);
+            posX -= 90;
+            posX += PantallaDelDispositivo.getWidth()/2;
+
+            gota = Sprite.sprite("gota.png");
+            gota.setPosition(posX, (PantallaDelDispositivo.getHeight()-(PantallaDelDispositivo.getHeight()/4))-50);
+            super.addChild(gota);
+
+            gota.runAction(MoveTo.action(tiempoEntreGotas, posX, -100));
+
+            nube = Sprite.sprite("nube.png");
+            nube.setPosition(PantallaDelDispositivo.getWidth()/2, (PantallaDelDispositivo.getHeight()-(PantallaDelDispositivo.getHeight()/4)));
+            super.addChild(nube);
         }
     }
 
@@ -83,15 +120,15 @@ public class clsJuego {
         }
         private void PonerBoton(){
             botonComenzarJuego = MenuItemImage.item("botoncomenzarjuego.png", "botoncomenzarjuegopresionado.png", this, "PresionaBotonComenzarJuego");
-            botonComenzarJuego.runAction(ScaleBy.action(0.01f, 2, 2));
+
             float posicionBotonX, posicionBotonY;
             posicionBotonX = 0;
             posicionBotonY = 0;
             botonComenzarJuego.setPosition(posicionBotonX, posicionBotonY);
         }
         public void PresionaBotonComenzarJuego(){
-
         }
+
     }
 
 }
