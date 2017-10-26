@@ -28,6 +28,8 @@ public class clsJuego {
     Sprite gota;
     MenuItemImage botonComenzarJuego;
 
+    boolean dejaDeLlover = false;
+
 
     public clsJuego(CCGLSurfaceView VistaDelJuego){
         _VistaDelJuego = VistaDelJuego;
@@ -90,24 +92,26 @@ public class clsJuego {
             super.addChild(nube);
         }
         public void Lluvia(float deltaTiempo){
-            Random random = new Random();
-            int tiempoEntreGotas = random.nextInt(2);
-            tiempoEntreGotas+=1;
+            if(!dejaDeLlover){
+                Random random = new Random();
+                int tiempoEntreGotas = random.nextInt(2);
+                tiempoEntreGotas+=1;
 
-            random = new Random();
-            int posX = random.nextInt(180);
-            posX -= 90;
-            posX += PantallaDelDispositivo.getWidth()/2;
+                random = new Random();
+                int posX = random.nextInt(180);
+                posX -= 90;
+                posX += PantallaDelDispositivo.getWidth()/2;
 
-            gota = Sprite.sprite("gota.png");
-            gota.setPosition(posX, (PantallaDelDispositivo.getHeight()-(PantallaDelDispositivo.getHeight()/4))-50);
-            super.addChild(gota);
+                gota = Sprite.sprite("gota.png");
+                gota.setPosition(posX, (PantallaDelDispositivo.getHeight()-(PantallaDelDispositivo.getHeight()/4))-50);
+                super.addChild(gota);
 
-            gota.runAction(MoveTo.action(tiempoEntreGotas, posX, -100));
+                gota.runAction(MoveTo.action(tiempoEntreGotas, posX, -100));
 
-            nube = Sprite.sprite("nube.png");
-            nube.setPosition(PantallaDelDispositivo.getWidth()/2, (PantallaDelDispositivo.getHeight()-(PantallaDelDispositivo.getHeight()/4)));
-            super.addChild(nube);
+                nube = Sprite.sprite("nube.png");
+                nube.setPosition(PantallaDelDispositivo.getWidth()/2, (PantallaDelDispositivo.getHeight()-(PantallaDelDispositivo.getHeight()/4)));
+                super.addChild(nube);
+            }
         }
     }
 
@@ -127,6 +131,10 @@ public class clsJuego {
             botonComenzarJuego.setPosition(posicionBotonX, posicionBotonY);
         }
         public void PresionaBotonComenzarJuego(){
+            Log.d("PresionaBoton", "entro");
+            dejaDeLlover = true;
+
+           // nube.runAction(MoveTo.action(3, 10, 0));
         }
 
     }
