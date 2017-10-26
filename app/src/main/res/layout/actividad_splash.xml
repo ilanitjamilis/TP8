@@ -9,8 +9,8 @@
     tools:context="com.example.jamilissokolowicz.tp8.ActividadSplash">
 
     <ImageView
-        android:layout_width="280dp"
-        android:layout_height="495dp"
+        android:layout_width="300dp"
+        android:layout_height="550dp"
         android:src="@drawable/icon"
         tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="0dp" />

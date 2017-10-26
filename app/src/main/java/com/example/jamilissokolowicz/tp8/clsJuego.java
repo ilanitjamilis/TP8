@@ -1,5 +1,7 @@
 package com.example.jamilissokolowicz.tp8;
 
+import android.content.Context;
+import android.media.MediaPlayer;
 import android.support.annotation.FloatRange;
 import android.util.Log;
 import android.widget.Button;
@@ -23,16 +25,21 @@ public class clsJuego {
     CCGLSurfaceView _VistaDelJuego;
     CCSize PantallaDelDispositivo;
 
+    Context _Contexto;
+
     Sprite wallpaper;
     Sprite nube;
     Sprite gota;
     MenuItemImage botonComenzarJuego;
 
     boolean dejaDeLlover = false;
+    int nivel = 0;
+    MediaPlayer mpMusicaFondo;
 
 
-    public clsJuego(CCGLSurfaceView VistaDelJuego){
+    public clsJuego(CCGLSurfaceView VistaDelJuego, Context contextop){
         _VistaDelJuego = VistaDelJuego;
+        _Contexto = contextop;
     }
 
     public void ComenzarJuego(){
@@ -60,9 +67,13 @@ public class clsJuego {
     class CapaFondoWallpaper extends Layer{
         public CapaFondoWallpaper() {
             PonerWallpaper();
+            mpMusicaFondo = MediaPlayer.create(_Contexto, R.raw.lluvia);
+            mpMusicaFondo.start();
+            mpMusicaFondo.setVolume(0.5f, 0.5f);
+            mpMusicaFondo.setLooping(true);
         }
         private void PonerWallpaper(){
-            wallpaper = Sprite.sprite("fondonubes.jpg");
+            wallpaper = Sprite.sprite("fondoprincipal.jpg");
             wallpaper.setPosition(PantallaDelDispositivo.getWidth()/2, PantallaDelDispositivo.getHeight()/2);
 
             float factorAncho, factorAlto;

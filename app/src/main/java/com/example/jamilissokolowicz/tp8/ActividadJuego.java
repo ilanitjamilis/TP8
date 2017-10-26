@@ -24,7 +24,7 @@ public class ActividadJuego extends Activity {
     protected void onStart(){
         super.onStart();
         clsJuego miJuego;
-        miJuego = new clsJuego(vistaPrincipal);
+        miJuego = new clsJuego(vistaPrincipal, this);
         miJuego.ComenzarJuego();
     }
 }
