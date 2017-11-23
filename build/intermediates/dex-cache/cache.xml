@@ -11,6 +11,33 @@
         <dex dex="F:\TP8\app\build\intermediates\pre-dexed\debug\classes_8be792eacffa755c22ce7d91793f8cf0c283c162.jar" />
     </item>
     <item
+        is-multidex="true"
+        jar="C:\Users\42103343\.android\build-cache\52dfda9b3ba8e5306532f031dbc205a4bc1e9cf8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="F:\TP8\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8be792eacffa755c22ce7d91793f8cf0c283c162\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="F:\TP8\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_dce0f5dc4ec87302d879250c45fe5f3f72f02917\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\42103343\.android\build-cache\2c3281068fddd475f45a10f889cdf727ce915aed\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="F:\TP8\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_46480cc04696c7e3b8bdd0e9dcacd965910ad3e6\classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="C:\Users\42103343\.android\build-cache\2c3281068fddd475f45a10f889cdf727ce915aed\output\jars\classes.jar"
         jumboMode="false"
@@ -18,6 +45,15 @@
         revision="25.0.2"
         sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
         <dex dex="F:\TP8\app\build\intermediates\pre-dexed\debug\classes_46480cc04696c7e3b8bdd0e9dcacd965910ad3e6.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\42103343\.android\build-cache\4780141920f73a7b181b464e680382cecaa85064\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="F:\TP8\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_43880ed7829baf53e9ec930fbefb2f111c589bb3\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -47,6 +83,15 @@
         <dex dex="F:\TP8\app\build\intermediates\pre-dexed\debug\classes_8bf364d8f280109707b5fbc4b1d30c781e9cf65c.jar" />
     </item>
     <item
+        is-multidex="true"
+        jar="C:\Users\42103343\.android\build-cache\2de6a7347cebbc771965ba3e6ec5b3476ca7188f\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="F:\TP8\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8bf364d8f280109707b5fbc4b1d30c781e9cf65c\classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="C:\Users\42103343\.android\build-cache\1929a04093c90dd487a4d6f3b831078d9c85a049\output\jars\classes.jar"
         jumboMode="false"
@@ -54,6 +99,15 @@
         revision="25.0.2"
         sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
         <dex dex="F:\TP8\app\build\intermediates\pre-dexed\debug\classes_f184fd2dcd557a8e263247b771a408a6f35fca52.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\42103343\.android\build-cache\1929a04093c90dd487a4d6f3b831078d9c85a049\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="F:\TP8\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f184fd2dcd557a8e263247b771a408a6f35fca52\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -65,6 +119,33 @@
         <dex dex="F:\TP8\app\build\intermediates\pre-dexed\debug\classes_3871f4ae4bea9aec0aa053626b7a5959e349e3c2.jar" />
     </item>
     <item
+        is-multidex="true"
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="F:\TP8\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_749f92721abc8a389255a48e6bc4f467c7c672e5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\TP8\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="F:\TP8\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_f5242dd17e54dddce2c819be2b907576953673eb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\42103343\.android\build-cache\9482a2898c74a654165c3cb29d79afa826904be9\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="F:\TP8\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3871f4ae4bea9aec0aa053626b7a5959e349e3c2\classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
         jumboMode="false"
@@ -72,6 +153,15 @@
         revision="25.0.2"
         sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
         <dex dex="F:\TP8\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_749f92721abc8a389255a48e6bc4f467c7c672e5.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\42103343\.android\build-cache\6328278e33254b599de052a5c715b18c1798a2b9\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="F:\TP8\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4c7986c09d5009402a4a435490fb883f9521ffb6\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -92,6 +182,24 @@
         <dex dex="F:\TP8\app\build\intermediates\pre-dexed\debug\classes_4c7986c09d5009402a4a435490fb883f9521ffb6.jar" />
     </item>
     <item
+        is-multidex="true"
+        jar="F:\TP8\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b50e354841e3f054195b6d2f1224e708c378afb0">
+        <dex dex="F:\TP8\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_5d3c8d197539a63aaf4c04edd3c27bc62d56cd04\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\42103343\.android\build-cache\320770101d25cf09e62f2ee923992912399cee64\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="F:\TP8\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4a95d9ba8fc531834b61d86662ac4cbd6e0ee353\classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="F:\TP8\app\libs\cocos2d-android.v0.82.jar"
         jumboMode="false"
@@ -99,6 +207,33 @@
         revision="25.0.2"
         sha1="0bd2a4a7260db13d42c683d262bb5243b3b2ed87">
         <dex dex="F:\TP8\app\build\intermediates\pre-dexed\debug\cocos2d-android.v0.82_4132be8d166729f649a81b8a1b4acd3a4e293c8f.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\42103343\.android\build-cache\ea925dae9dcf66ba17cb3fa166dcf614d5bc9576\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="F:\TP8\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_024bfb6561f8fad4dee8ba2599997b273e897912\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\TP8\app\libs\cocos2d-android.v0.82.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0bd2a4a7260db13d42c683d262bb5243b3b2ed87">
+        <dex dex="F:\TP8\app\build\intermediates\transforms\dex\debug\folders\1000\2\cocos2d-android.v0.82_4132be8d166729f649a81b8a1b4acd3a4e293c8f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\42103343\.android\build-cache\66112ffc7c8b57a81e141f6c3815cac9c507ae2e\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="F:\TP8\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a88539e4b1f9722cd9380ad3eba7596051026a3e\classes.dex" />
     </item>
     <item
         is-multidex="false"

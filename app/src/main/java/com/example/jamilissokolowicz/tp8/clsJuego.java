@@ -55,8 +55,6 @@ public class clsJuego {
 
     boolean yaJuega=false;
 
-    int i = 1;
-
 
     public clsJuego(CCGLSurfaceView VistaDelJuego, Context contextop){
         _VistaDelJuego = VistaDelJuego;
@@ -141,12 +139,6 @@ public class clsJuego {
 
                 gota.runAction(MoveTo.action(tiempoEntreGotas, posX, -100));
 
-                /*nube = Sprite.sprite("nube.png");
-                nube.setPosition(PantallaDelDispositivo.getWidth()/2, (PantallaDelDispositivo.getHeight()-(PantallaDelDispositivo.getHeight()/4)));
-                super.removeChild(nube, true);
-                i++;
-                Log.d("borra", "borro nube "+i);
-                super.addChild(nube);*/
             }
         }
     }
@@ -198,6 +190,7 @@ public class clsJuego {
         }
 
         private void nivel1() {
+            nivel = 1;
             palo1 = Sprite.sprite("paloNivel1.png");
             palo1.setPosition(PantallaDelDispositivo.getWidth() / 4 + 30, (palo1.getHeight() / 2));
             super.addChild(palo1);
@@ -378,11 +371,17 @@ public class clsJuego {
                 rutinaPerdio();
 
             }
-            else{
+            else
+            {
                 boolean tocaLlegada = InterseccionEntreSprites(miArcoiris, llegada);
                 if(tocaLlegada)
                 {
-                    cambiarDeNivel();
+                    Log.d("nivel1", "gano AMIGO");
+
+                    cambiarDeNivel(nivel);
+                    nivel++;
+                    super.removeChild(miArcoiris, true);
+                    super.removeChild(llegada, true);
                 }
             }
 
@@ -390,11 +389,41 @@ public class clsJuego {
             return true;
         }
 
-        private void cambiarDeNivel()
+        private void cambiarDeNivel(int nivel)
         {
             ubicacionArcoirisXPRINCIPIO = ((palo2.getPositionX()-palo1.getPositionX())/2)+palo1.getPositionX();
             ubicacionArcoirisYPRINCIPIO = 100;
-            ubicarArcoirisMasLlegada(ubicacionArcoirisXPRINCIPIO, ubicacionArcoirisYPRINCIPIO, "dos.png", "dosWIN.png");
+
+            Log.d("cambiardenivel", "el nivel es "+nivel);
+
+            switch (nivel)
+            {
+                case 1:
+                    ubicarArcoirisMasLlegada(ubicacionArcoirisXPRINCIPIO, ubicacionArcoirisYPRINCIPIO, "dos.png", "dosWIN.png");
+                    //nivel2();
+
+                    break;
+                case 2:
+                    ubicarArcoirisMasLlegada(ubicacionArcoirisXPRINCIPIO, ubicacionArcoirisYPRINCIPIO, "tres.png", "tresWIN.png");
+                    //nivel3();
+
+                    break;
+                case 3:
+                    ubicarArcoirisMasLlegada(ubicacionArcoirisXPRINCIPIO, ubicacionArcoirisYPRINCIPIO, "cuatro.png", "cuatroWIN.png");
+                    //nivel4();
+
+                    break;
+                case 4:
+                    ubicarArcoirisMasLlegada(ubicacionArcoirisXPRINCIPIO, ubicacionArcoirisYPRINCIPIO, "cinco.png", "cincoWIN.png");
+                    //nivel5();
+
+                    break;
+                case 5:
+                    //gano();
+
+                    break;
+
+            }
         }
 
         @Override
