@@ -41,7 +41,7 @@ public class clsJuego {
     Sprite sol;
     MenuItemImage botonComenzarJuego;
 
-    Sprite palo1, paloo1, palo2, paloo2;
+    Sprite palo1, paloo1, palo2, paloo2, palo3, palo4;
 
     boolean dejaDeLlover = false;
     int nivel = 0;
@@ -215,14 +215,152 @@ public class clsJuego {
             ubicarArcoirisMasLlegada(ubicacionArcoirisXPRINCIPIO, ubicacionArcoirisYPRINCIPIO, "uno.png", "unoWIN.png");
         }
 
+        private void nivel2()
+        {
+            Log.d("nivel2", "entra a nivel2");
+
+            super.removeChild(palo1, true);
+            super.removeChild(paloo1, true);
+            super.removeChild(palo2, true);
+            super.removeChild(paloo2, true);
+
+            palo1 = Sprite.sprite("paloNivel1.png");
+            palo1.setPosition(PantallaDelDispositivo.getWidth() / 4+30, (palo1.getHeight() / 2));
+            super.addChild(palo1);
+
+            paloo1 = Sprite.sprite("paloNivel1.png");
+            paloo1.setPosition(PantallaDelDispositivo.getWidth() / 4+30, ((paloo1.getHeight() / 4) * 3) + 100);
+            super.addChild(paloo1);
+
+            palo2 = Sprite.sprite("paloNivel1.png");
+            palo2.setPosition(((PantallaDelDispositivo.getWidth() / 4)*3)-30, (palo2.getHeight() / 2));
+            super.addChild(palo2);
+
+            paloo2 = Sprite.sprite("paloNivel1.png");
+            paloo2.setPosition(((PantallaDelDispositivo.getWidth() / 4)*3)-30, ((paloo2.getHeight() / 4) * 3) + 100);
+            super.addChild(paloo2);
+
+            ubicacionArcoirisXPRINCIPIO = ((palo2.getPositionX()-palo1.getPositionX())/2)+palo1.getPositionX();
+            ubicacionArcoirisYPRINCIPIO = 100;
+
+            ubicarArcoirisMasLlegada(ubicacionArcoirisXPRINCIPIO, ubicacionArcoirisYPRINCIPIO, "dos.png", "dosWIN.png");
+        }
+
+        private void nivel3()
+        {
+            Log.d("nivel3", "empezo el nivel3");
+
+            super.removeChild(palo1, true);
+            super.removeChild(paloo1, true);
+            super.removeChild(palo2, true);
+            super.removeChild(paloo2, true);
+
+           /* palo1 = Sprite.sprite("paloNivel1.png");
+            palo1.setPosition(PantallaDelDispositivo.getWidth() / 8 - 30, (palo1.getHeight()));
+            super.addChild(palo1);*/
+
+            palo2 = Sprite.sprite("paloNivel1.png");
+            palo2.setPosition(((PantallaDelDispositivo.getWidth() / 8)*4) + 30, 100);
+            super.addChild(palo2);
+
+            paloo1 = Sprite.sprite("paloNivel1.png");
+            paloo1.setPosition((PantallaDelDispositivo.getWidth() / 8 +30), 300);
+            super.addChild(paloo1);
+
+           /* paloo2 = Sprite.sprite("paloNivel1.png");
+            paloo2.setPosition(((PantallaDelDispositivo.getWidth() / 8)*4)+30, palo2.getHeight());
+            super.addChild(paloo2);*/
+
+            palo3 = Sprite.sprite("paloChico.png");
+            palo3.setPosition(paloo1.getPositionX()+(palo3.getWidth()/2-10), paloo1.getPositionY()+(palo3.getWidth()/2));
+            super.addChild(palo3);
+
+            palo4 = Sprite.sprite("paloChico.png");
+            palo4.setPosition((palo2.getPositionX()+(palo3.getWidth()/2)-10),  palo2.getPositionY()+(palo3.getWidth()/2));
+            super.addChild(palo4);
+
+           // Log.d("nivel3", "la posicion de paloo2 es x:"+paloo2.getPositionX()+" y:"+paloo2.getPositionY());
+            //Log.d("nivel3", "la posicion de paloo1 es x:"+paloo1.getPositionX()+" y:"+paloo1.getPositionY());
+            //Log.d("nivel3", "la posicion de palo2 es x:"+palo2.getPositionX()+" y:"+palo2.getPositionY());
+            //Log.d("nivel3", "la posicion de palo1 es x:"+palo1.getPositionX()+" y:"+palo1.getPositionY());
+            //Log.d("nivel3", "la posicion de palo3 es x:"+palo3.getPositionX()+" y:"+palo3.getPositionY());
+
+            ubicacionArcoirisXPRINCIPIO = ((palo2.getPositionX()-paloo1.getPositionX())/2)+paloo1.getPositionX();
+            ubicacionArcoirisYPRINCIPIO = 100;
+
+            ubicarArcoirisMasLlegada(ubicacionArcoirisXPRINCIPIO, ubicacionArcoirisYPRINCIPIO, "tres.png", "tresWIN.png");
+        }
+
+        private void nivel4()
+        {
+            Log.d("nivel4", "empezo el nivel4");
+
+            super.removeChild(palo1, true);
+            super.removeChild(paloo1, true);
+            super.removeChild(palo2, true);
+            super.removeChild(paloo2, true);
+
+            palo1 = Sprite.sprite("paloNivel1.png");
+            palo1.setPosition(PantallaDelDispositivo.getWidth() / 2 -300, 50);
+            super.addChild(palo1);
+
+            palo2 = Sprite.sprite("paloNivel1.png");
+            palo2.setPosition(PantallaDelDispositivo.getWidth() / 2 -300, 350);
+            super.addChild(palo2);
+
+            palo2 = Sprite.sprite("paloNivel1.png");
+            palo2.setPosition(((PantallaDelDispositivo.getWidth() / 4)*3) + 30, (palo2.getHeight() / 2));
+            super.addChild(palo2);
+
+            paloo2 = Sprite.sprite("paloNivel1.png");
+            paloo2.setPosition(((PantallaDelDispositivo.getWidth() / 4)*3) + 30, ((paloo2.getHeight() / 4) * 3) + 100);
+            super.addChild(paloo2);
+
+        }
+
+        private void nivel5()
+        {
+            Log.d("nivel5", "empezo el nivel5");
+
+            super.removeChild(palo1, true);
+            super.removeChild(paloo1, true);
+            super.removeChild(palo2, true);
+            super.removeChild(paloo2, true);
+
+            palo1 = Sprite.sprite("paloNivel1.png");
+            palo1.setPosition(PantallaDelDispositivo.getWidth() / 4 + 30, (palo1.getHeight() / 2));
+            super.addChild(palo1);
+
+            paloo1 = Sprite.sprite("paloNivel1.png");
+            paloo1.setPosition(PantallaDelDispositivo.getWidth() / 4 + 30, ((paloo1.getHeight() / 4) * 3) + 100);
+            super.addChild(paloo1);
+
+            palo2 = Sprite.sprite("paloNivel1.png");
+            palo2.setPosition(((PantallaDelDispositivo.getWidth() / 4)*3) + 30, (palo2.getHeight() / 2));
+            super.addChild(palo2);
+
+            paloo2 = Sprite.sprite("paloNivel1.png");
+            paloo2.setPosition(((PantallaDelDispositivo.getWidth() / 4)*3) + 30, ((paloo2.getHeight() / 4) * 3) + 100);
+            super.addChild(paloo2);
+        }
+
         private void ubicarArcoirisMasLlegada(Float x, float y, String nombreArchivoArcoiris, String nombreArchivoLlegada) {
             miArcoiris = Sprite.sprite(nombreArchivoArcoiris);
             miArcoiris.setPosition(x, y);
             super.addChild(miArcoiris);
 
-            llegada = Sprite.sprite(nombreArchivoLlegada);
-            llegada.setPosition(x, PantallaDelDispositivo.getHeight()-100);
-            super.addChild(llegada);
+            if(nivel==2)
+            {
+                llegada = Sprite.sprite(nombreArchivoLlegada);
+                llegada.setPosition(PantallaDelDispositivo.getWidth()-400, ((palo2.getPositionY()-paloo1.getPositionY())/2)+paloo1.getPositionY());
+                super.addChild(llegada);
+            }
+            else
+            {
+                llegada = Sprite.sprite(nombreArchivoLlegada);
+                llegada.setPosition(x, PantallaDelDispositivo.getHeight()-100);
+                super.addChild(llegada);
+            }
 
             Log.d("nivel1", "la posicion de arco es x:"+miArcoiris.getPositionX()+" y:"+miArcoiris.getPositionY());
         }
@@ -363,25 +501,45 @@ public class clsJuego {
             boolean tocaPaloo1 = InterseccionEntreSprites(miArcoiris, paloo1);
             boolean tocaPalo2 = InterseccionEntreSprites(miArcoiris, palo2);
             boolean tocaPaloo2 = InterseccionEntreSprites(miArcoiris, paloo2);
+            boolean tocaPalo3 = InterseccionEntreSprites(miArcoiris, palo3);
+            boolean tocaPalo4 = InterseccionEntreSprites(miArcoiris, palo4);
 
-            if(tocaPalo1 || tocaPaloo1 || tocaPalo2 || tocaPaloo2){
-                Log.d("nivel1", "PERDISTE AMIGO");
+            if(tocaPalo1 || tocaPaloo1 || tocaPalo2 || tocaPaloo2 || tocaPalo3 || tocaPalo4){
+                Log.d("touchmove", "PERDISTE AMIGO");
 
                 //Hacer rurina para demostrarle que es un looser --> PERDIO
                 rutinaPerdio();
-
             }
             else
             {
                 boolean tocaLlegada = InterseccionEntreSprites(miArcoiris, llegada);
                 if(tocaLlegada)
                 {
-                    Log.d("nivel1", "gano AMIGO");
-
-                    cambiarDeNivel(nivel);
-                    nivel++;
+                    Log.d("touchmove", "gano AMIGO");
                     super.removeChild(miArcoiris, true);
                     super.removeChild(llegada, true);
+                    cambiarDeNivel(nivel);
+                    switch (nivel)
+                    {
+                        case 1:
+                            nivel=2;
+
+                            break;
+                        case 2:
+                            //nivel=3;
+
+                            break;
+                        case 3:
+                            //nivel=4;
+
+                            break;
+                        case 4:
+                            //nivel=5;
+
+                            break;
+                        default:
+                            Log.d("switch", "ya subio todos los niveles ");
+                    }
                 }
             }
 
@@ -399,13 +557,11 @@ public class clsJuego {
             switch (nivel)
             {
                 case 1:
-                    ubicarArcoirisMasLlegada(ubicacionArcoirisXPRINCIPIO, ubicacionArcoirisYPRINCIPIO, "dos.png", "dosWIN.png");
-                    //nivel2();
+                    nivel2();
 
                     break;
                 case 2:
-                    ubicarArcoirisMasLlegada(ubicacionArcoirisXPRINCIPIO, ubicacionArcoirisYPRINCIPIO, "tres.png", "tresWIN.png");
-                    //nivel3();
+                    nivel3();
 
                     break;
                 case 3:
@@ -426,10 +582,6 @@ public class clsJuego {
             }
         }
 
-        @Override
-        public boolean ccTouchesEnded (MotionEvent event){
-            return true;
-        }
     }
 }
 
