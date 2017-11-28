@@ -255,29 +255,33 @@ public class clsJuego {
             super.removeChild(palo2, true);
             super.removeChild(paloo2, true);
 
-           /* palo1 = Sprite.sprite("paloNivel1.png");
-            palo1.setPosition(PantallaDelDispositivo.getWidth() / 8 - 30, (palo1.getHeight()));
-            super.addChild(palo1);*/
+            //palo1=palo3. palochico de arriba
+            palo1 = Sprite.sprite("paloChico.png");
+            palo1.setPosition(paloo1.getPositionX()+(palo1.getWidth()/2-10), paloo1.getPositionY()+(palo1.getWidth()/2));
+            super.addChild(palo1);
 
+            //palo de la derecha
             palo2 = Sprite.sprite("paloNivel1.png");
             palo2.setPosition(((PantallaDelDispositivo.getWidth() / 8)*4) + 30, 100);
             super.addChild(palo2);
 
+            //palo de la izq
             paloo1 = Sprite.sprite("paloNivel1.png");
-            paloo1.setPosition((PantallaDelDispositivo.getWidth() / 8 +30), 300);
+            paloo1.setPosition((PantallaDelDispositivo.getWidth() / 8 -30), 350);
             super.addChild(paloo1);
 
-           /* paloo2 = Sprite.sprite("paloNivel1.png");
-            paloo2.setPosition(((PantallaDelDispositivo.getWidth() / 8)*4)+30, palo2.getHeight());
-            super.addChild(paloo2);*/
+            //paloo2=palo4 .palochico de abajo
+            paloo2 = Sprite.sprite("paloChico.png");
+            paloo2.setPosition((palo2.getPositionX()+(palo1.getWidth()/2)-10),  palo2.getPositionY()+(palo1.getWidth()/2));
+            super.addChild(paloo2);
 
-            palo3 = Sprite.sprite("paloChico.png");
+            /*palo3 = Sprite.sprite("paloChico.png");
             palo3.setPosition(paloo1.getPositionX()+(palo3.getWidth()/2-10), paloo1.getPositionY()+(palo3.getWidth()/2));
-            super.addChild(palo3);
+            super.addChild(palo3);*/
 
-            palo4 = Sprite.sprite("paloChico.png");
+           /* palo4 = Sprite.sprite("paloChico.png");
             palo4.setPosition((palo2.getPositionX()+(palo3.getWidth()/2)-10),  palo2.getPositionY()+(palo3.getWidth()/2));
-            super.addChild(palo4);
+            super.addChild(palo4);*/
 
            // Log.d("nivel3", "la posicion de paloo2 es x:"+paloo2.getPositionX()+" y:"+paloo2.getPositionY());
             //Log.d("nivel3", "la posicion de paloo1 es x:"+paloo1.getPositionX()+" y:"+paloo1.getPositionY());
@@ -300,18 +304,22 @@ public class clsJuego {
             super.removeChild(palo2, true);
             super.removeChild(paloo2, true);
 
+            //psalo izq
             palo1 = Sprite.sprite("paloNivel1.png");
             palo1.setPosition(PantallaDelDispositivo.getWidth() / 2 -300, 50);
             super.addChild(palo1);
 
-            palo2 = Sprite.sprite("paloNivel1.png");
-            palo2.setPosition(PantallaDelDispositivo.getWidth() / 2 -300, 350);
-            super.addChild(palo2);
+            //palo medio
+            paloo1 = Sprite.sprite("paloNivel1.png");
+            paloo1.setPosition(PantallaDelDispositivo.getWidth() / 2 -300, 350);
+            super.addChild(paloo1);
 
+            //palo arriba
             palo2 = Sprite.sprite("paloNivel1.png");
             palo2.setPosition(((PantallaDelDispositivo.getWidth() / 4)*3) + 30, (palo2.getHeight() / 2));
             super.addChild(palo2);
 
+            //palo der
             paloo2 = Sprite.sprite("paloNivel1.png");
             paloo2.setPosition(((PantallaDelDispositivo.getWidth() / 4)*3) + 30, ((paloo2.getHeight() / 4) * 3) + 100);
             super.addChild(paloo2);
@@ -352,14 +360,21 @@ public class clsJuego {
             if(nivel==2)
             {
                 llegada = Sprite.sprite(nombreArchivoLlegada);
-                llegada.setPosition(PantallaDelDispositivo.getWidth()-400, ((palo2.getPositionY()-paloo1.getPositionY())/2)+paloo1.getPositionY());
+                llegada.setPosition(PantallaDelDispositivo.getWidth()-150, ((palo1.getPositionY()-paloo2.getPositionY())/2)+paloo2.getPositionY());
                 super.addChild(llegada);
             }
             else
             {
-                llegada = Sprite.sprite(nombreArchivoLlegada);
-                llegada.setPosition(x, PantallaDelDispositivo.getHeight()-100);
-                super.addChild(llegada);
+                if(nivel==3)
+                {
+
+                }
+                else
+                {
+                    llegada = Sprite.sprite(nombreArchivoLlegada);
+                    llegada.setPosition(x, PantallaDelDispositivo.getHeight() - 100);
+                    super.addChild(llegada);
+                }
             }
 
             Log.d("nivel1", "la posicion de arco es x:"+miArcoiris.getPositionX()+" y:"+miArcoiris.getPositionY());
@@ -501,10 +516,11 @@ public class clsJuego {
             boolean tocaPaloo1 = InterseccionEntreSprites(miArcoiris, paloo1);
             boolean tocaPalo2 = InterseccionEntreSprites(miArcoiris, palo2);
             boolean tocaPaloo2 = InterseccionEntreSprites(miArcoiris, paloo2);
-            boolean tocaPalo3 = InterseccionEntreSprites(miArcoiris, palo3);
-            boolean tocaPalo4 = InterseccionEntreSprites(miArcoiris, palo4);
+            //boolean tocaPalo3 = InterseccionEntreSprites(miArcoiris, palo3);
+            //boolean tocaPalo4 = InterseccionEntreSprites(miArcoiris, palo4);
 
-            if(tocaPalo1 || tocaPaloo1 || tocaPalo2 || tocaPaloo2 || tocaPalo3 || tocaPalo4){
+            if(tocaPalo1 || tocaPaloo1 || tocaPalo2 || tocaPaloo2)
+            {
                 Log.d("touchmove", "PERDISTE AMIGO");
 
                 //Hacer rurina para demostrarle que es un looser --> PERDIO
@@ -526,7 +542,7 @@ public class clsJuego {
 
                             break;
                         case 2:
-                            //nivel=3;
+                            nivel=3;
 
                             break;
                         case 3:
@@ -566,7 +582,7 @@ public class clsJuego {
                     break;
                 case 3:
                     ubicarArcoirisMasLlegada(ubicacionArcoirisXPRINCIPIO, ubicacionArcoirisYPRINCIPIO, "cuatro.png", "cuatroWIN.png");
-                    //nivel4();
+                    nivel4();
 
                     break;
                 case 4:
