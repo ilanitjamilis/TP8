@@ -189,8 +189,10 @@ public class clsJuego {
             sol.runAction(secuencia);
         }
 
-        private void nivel1() {
+        private void nivel1()
+        {
             nivel = 1;
+
             palo1 = Sprite.sprite("paloNivel1.png");
             palo1.setPosition(PantallaDelDispositivo.getWidth() / 4 + 30, (palo1.getHeight() / 2));
             super.addChild(palo1);
@@ -255,11 +257,6 @@ public class clsJuego {
             super.removeChild(palo2, true);
             super.removeChild(paloo2, true);
 
-            //palo1=palo3. palochico de arriba
-            palo1 = Sprite.sprite("paloChico.png");
-            palo1.setPosition(paloo1.getPositionX()+(palo1.getWidth()/2-10), paloo1.getPositionY()+(palo1.getWidth()/2));
-            super.addChild(palo1);
-
             //palo de la derecha
             palo2 = Sprite.sprite("paloNivel1.png");
             palo2.setPosition(((PantallaDelDispositivo.getWidth() / 8)*4) + 30, 100);
@@ -269,6 +266,12 @@ public class clsJuego {
             paloo1 = Sprite.sprite("paloNivel1.png");
             paloo1.setPosition((PantallaDelDispositivo.getWidth() / 8 -30), 350);
             super.addChild(paloo1);
+
+            //palo1=palo3. palochico de arriba
+            palo1 = Sprite.sprite("paloChico.png");
+            palo1.setPosition(paloo1.getPositionX()+(palo1.getWidth()/2-10), paloo1.getPositionY()+(palo1.getWidth()/2));
+            super.addChild(palo1);
+
 
             //paloo2=palo4 .palochico de abajo
             paloo2 = Sprite.sprite("paloChico.png");
@@ -289,10 +292,13 @@ public class clsJuego {
             //Log.d("nivel3", "la posicion de palo1 es x:"+palo1.getPositionX()+" y:"+palo1.getPositionY());
             //Log.d("nivel3", "la posicion de palo3 es x:"+palo3.getPositionX()+" y:"+palo3.getPositionY());
 
+            //ubicacionArcoirisXPRINCIPIO = 100;
             ubicacionArcoirisXPRINCIPIO = ((palo2.getPositionX()-paloo1.getPositionX())/2)+paloo1.getPositionX();
             ubicacionArcoirisYPRINCIPIO = 100;
-
+            Log.d("ubicaarcoyllegada", "antes de ir a ubica");
             ubicarArcoirisMasLlegada(ubicacionArcoirisXPRINCIPIO, ubicacionArcoirisYPRINCIPIO, "tres.png", "tresWIN.png");
+            Log.d("ubicaarcoyllegada", "el nivel es:"+nivel);
+            rutinaPerdio();
         }
 
         private void nivel4()
@@ -306,24 +312,30 @@ public class clsJuego {
 
             //psalo izq
             palo1 = Sprite.sprite("paloNivel1.png");
-            palo1.setPosition(PantallaDelDispositivo.getWidth() / 2 -300, 50);
+            palo1.setPosition(PantallaDelDispositivo.getWidth() / 2 -310, 450);
             super.addChild(palo1);
 
             //palo medio
             paloo1 = Sprite.sprite("paloNivel1.png");
-            paloo1.setPosition(PantallaDelDispositivo.getWidth() / 2 -300, 350);
+            paloo1.setPosition(PantallaDelDispositivo.getWidth() / 2 , 50);
             super.addChild(paloo1);
 
             //palo arriba
-            palo2 = Sprite.sprite("paloNivel1.png");
-            palo2.setPosition(((PantallaDelDispositivo.getWidth() / 4)*3) + 30, (palo2.getHeight() / 2));
+            palo2 = Sprite.sprite("paloChicoArriba.png");
+            palo2.setPosition(PantallaDelDispositivo.getWidth() / 2, palo1.getPositionY()*2+10);
             super.addChild(palo2);
 
             //palo der
             paloo2 = Sprite.sprite("paloNivel1.png");
-            paloo2.setPosition(((PantallaDelDispositivo.getWidth() / 4)*3) + 30, ((paloo2.getHeight() / 4) * 3) + 100);
+            paloo2.setPosition(PantallaDelDispositivo.getWidth() / 2 +310, 450);
             super.addChild(paloo2);
 
+            ubicacionArcoirisXPRINCIPIO = ((paloo1.getPositionX()-palo1.getPositionX())/2)+palo1.getPositionX();
+            ubicacionArcoirisYPRINCIPIO = 100;
+
+            ubicarArcoirisMasLlegada(ubicacionArcoirisXPRINCIPIO, ubicacionArcoirisYPRINCIPIO, "cuatro.png", "cuatroWIN.png");
+
+            rutinaPerdio();
         }
 
         private void nivel5()
@@ -335,48 +347,97 @@ public class clsJuego {
             super.removeChild(palo2, true);
             super.removeChild(paloo2, true);
 
+            //IZQ ABAJO
             palo1 = Sprite.sprite("paloNivel1.png");
-            palo1.setPosition(PantallaDelDispositivo.getWidth() / 4 + 30, (palo1.getHeight() / 2));
+            palo1.setPosition((PantallaDelDispositivo.getWidth() / 4)-100, PantallaDelDispositivo.getHeight()-400);
             super.addChild(palo1);
 
+            //IZQARRIBA
             paloo1 = Sprite.sprite("paloNivel1.png");
-            paloo1.setPosition(PantallaDelDispositivo.getWidth() / 4 + 30, ((paloo1.getHeight() / 4) * 3) + 100);
+            paloo1.setPosition((PantallaDelDispositivo.getWidth() / 4)-100, PantallaDelDispositivo.getHeight());
             super.addChild(paloo1);
 
+            //DERABAJO
             palo2 = Sprite.sprite("paloNivel1.png");
-            palo2.setPosition(((PantallaDelDispositivo.getWidth() / 4)*3) + 30, (palo2.getHeight() / 2));
+            palo2.setPosition(((PantallaDelDispositivo.getWidth() / 4)*3)-100, 0);
             super.addChild(palo2);
 
+            //DERARRIBA
             paloo2 = Sprite.sprite("paloNivel1.png");
-            paloo2.setPosition(((PantallaDelDispositivo.getWidth() / 4)*3) + 30, ((paloo2.getHeight() / 4) * 3) + 100);
+            paloo2.setPosition(((PantallaDelDispositivo.getWidth() / 4)*3)-100, 400);
             super.addChild(paloo2);
+
+            ubicacionArcoirisXPRINCIPIO = ((PantallaDelDispositivo.getWidth()-paloo2.getPositionX())/2)+paloo2.getPositionX();
+            ubicacionArcoirisYPRINCIPIO = 100;
+
+            ubicarArcoirisMasLlegada(ubicacionArcoirisXPRINCIPIO, ubicacionArcoirisYPRINCIPIO, "cinco.png", "cincoWIN.png");
+
+            rutinaPerdio();
         }
 
-        private void ubicarArcoirisMasLlegada(Float x, float y, String nombreArchivoArcoiris, String nombreArchivoLlegada) {
+        private void gano()
+        {
+            super.removeChild(palo1, true);
+            super.removeChild(paloo1, true);
+            super.removeChild(palo2, true);
+            super.removeChild(paloo2, true);
+            super.removeChild(miArcoiris, true);
+
+            miArcoiris = Sprite.sprite("icon.png");
+            miArcoiris.setPosition(PantallaDelDispositivo.getWidth()/2, PantallaDelDispositivo.getHeight()/2);
+            super.addChild(miArcoiris);
+
+            ScaleBy agrandar, achicar, dejarIgual;
+
+            agrandar = ScaleBy.action(1, 3, 3);
+            achicar = ScaleBy.action(1, 0.5f, 0.5f);
+            dejarIgual = ScaleBy.action(1, 2, 2);
+            IntervalAction latido;
+            latido= Sequence.actions(agrandar, achicar, dejarIgual);
+            miArcoiris.runAction(latido);
+        }
+
+        private void ubicarArcoirisMasLlegada(Float x, float y, String nombreArchivoArcoiris, String nombreArchivoLlegada)
+        {
             miArcoiris = Sprite.sprite(nombreArchivoArcoiris);
             miArcoiris.setPosition(x, y);
             super.addChild(miArcoiris);
 
-            if(nivel==2)
+            Log.d("ubicaarcoyllegada", "el nivel es:"+nivel);
+
+            if(nivel==1)
             {
                 llegada = Sprite.sprite(nombreArchivoLlegada);
-                llegada.setPosition(PantallaDelDispositivo.getWidth()-150, ((palo1.getPositionY()-paloo2.getPositionY())/2)+paloo2.getPositionY());
+                llegada.setPosition(x, PantallaDelDispositivo.getHeight() - 100);
                 super.addChild(llegada);
             }
             else
-            {
-                if(nivel==3)
                 {
-
-                }
-                else
+                if (nivel == 2)
                 {
                     llegada = Sprite.sprite(nombreArchivoLlegada);
-                    llegada.setPosition(x, PantallaDelDispositivo.getHeight() - 100);
+                    llegada.setPosition(PantallaDelDispositivo.getWidth() - 150, ((palo1.getPositionY() - paloo2.getPositionY()) / 2) + paloo2.getPositionY());
                     super.addChild(llegada);
                 }
+                 else
+                    {
+                    if (nivel == 3)
+                    {
+                        llegada = Sprite.sprite(nombreArchivoLlegada);
+                        llegada.setPosition(((paloo1.getPositionX() - paloo2.getPositionX()) / 2) + paloo2.getPositionX(), 100);
+                        super.addChild(llegada);
+                    }
+                    else
+                    {
+                        if(nivel==4)
+                        {
+                            llegada = Sprite.sprite(nombreArchivoLlegada);
+                            llegada.setPosition(((paloo2.getPositionX() - palo1.getPositionX()) / 2) + palo1.getPositionX(), 100);
+                            super.addChild(llegada);
+                        }
+                    }
+                }
             }
-
             Log.d("nivel1", "la posicion de arco es x:"+miArcoiris.getPositionX()+" y:"+miArcoiris.getPositionY());
         }
 
@@ -489,9 +550,6 @@ public class clsJuego {
             miArcoiris.runAction(MoveTo.action(0.8f, ubicacionArcoirisXPRINCIPIO, ubicacionArcoirisYPRINCIPIO));
         }
 
-
-
-
         @Override
         public boolean ccTouchesBegan (MotionEvent event){
             if(yaJuega)
@@ -516,8 +574,7 @@ public class clsJuego {
             boolean tocaPaloo1 = InterseccionEntreSprites(miArcoiris, paloo1);
             boolean tocaPalo2 = InterseccionEntreSprites(miArcoiris, palo2);
             boolean tocaPaloo2 = InterseccionEntreSprites(miArcoiris, paloo2);
-            //boolean tocaPalo3 = InterseccionEntreSprites(miArcoiris, palo3);
-            //boolean tocaPalo4 = InterseccionEntreSprites(miArcoiris, palo4);
+
 
             if(tocaPalo1 || tocaPaloo1 || tocaPalo2 || tocaPaloo2)
             {
@@ -546,11 +603,11 @@ public class clsJuego {
 
                             break;
                         case 3:
-                            //nivel=4;
+                            nivel=4;
 
                             break;
                         case 4:
-                            //nivel=5;
+                            nivel=5;
 
                             break;
                         default:
@@ -581,17 +638,15 @@ public class clsJuego {
 
                     break;
                 case 3:
-                    ubicarArcoirisMasLlegada(ubicacionArcoirisXPRINCIPIO, ubicacionArcoirisYPRINCIPIO, "cuatro.png", "cuatroWIN.png");
                     nivel4();
 
                     break;
                 case 4:
-                    ubicarArcoirisMasLlegada(ubicacionArcoirisXPRINCIPIO, ubicacionArcoirisYPRINCIPIO, "cinco.png", "cincoWIN.png");
-                    //nivel5();
+                    nivel5();
 
                     break;
                 case 5:
-                    //gano();
+                    gano();
 
                     break;
 
